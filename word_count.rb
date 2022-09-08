@@ -14,7 +14,7 @@ class Phrase
 
 def word_count
      @phrase.downcase.strip.scan(/\b[\w']+\b/).tally()
-    #  lowercase phrase, strip the whitespace, scan(regex) for any word between quotation border, tally the results into a hash.
+    #  lowercase phrase, strip the whitespace, word boundary pattern any whole word including apostrophes, tally the results into a hash.
 end
 
 end
