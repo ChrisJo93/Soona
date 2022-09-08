@@ -6,11 +6,15 @@ To get started with TDD, see the `README.md` file in your
 `ruby/word-count` directory.
 =end
 
-# Refactor sanitizer with regex to handle all test conditions
+class Phrase
+    def initialize(phrase)
+        @phrase = phrase
+    end
 
-def wordCount(string)
-    countHash = string.downcase.split(/[,\s\W\b]+/).tally()
-    puts countHash
+
+def word_count
+     @phrase.downcase.strip.scan(/\b[\w']+\b/).tally()
+    #  lowercase phrase, strip the whitespace, scan(regex) for any word between quotation border, tally the results into a hash.
 end
 
-wordCount("this 'this' This,don't thing,thing,this!!!! \n:pun:")
+end
